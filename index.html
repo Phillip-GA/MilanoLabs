@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milano Labs Dashboard</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React and ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <!-- Babel for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #root {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // Hero Content (Dashboard)
+    const HeroContent = () => {
+      return (
+        <div>
+          <h2 className="text-xl font-medium mb-6">Dashboard</h2>
+          
+          {/* Key Metrics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">App Availability</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-1">99.8%</div>
+                  <div className="text-sm text-gray-500">Uptime</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">Lead Time</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-600 mb-1">3.2</div>
+                  <div className="text-sm text-gray-500">Days</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">Deployment Frequency</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-1">5.4</div>
+                  <div className="text-sm text-gray-500">Weekly</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">Active SDUs</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-500 mb-1">8</div>
+                  <div className="text-sm text-gray-500">Units</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Operating Model Progress */}
+          <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-6">
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="font-medium">Operating Model Progress</h3>
+              <div className="text-sm text-blue-600">View All</div>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-start p-2 hover:bg-gray-50 rounded">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">🎯</span>
+                </div>
+                <div className="flex-1">
+                  <div className="font-medium">Mission Impact Assessment</div>
+                  <div className="text-sm text-gray-500">Cassiopeia Team - Completed</div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+                    <div className="bg-blue-600 h-2 rounded-full" style={{width: '100%'}}></div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-start p-2 hover:bg-gray-50 rounded">
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600">⚡</span>
+                </div>
+                <div className="flex-1">
+                  <div className="font-medium">Rapid Solution Development</div>
+                  <div className="text-sm text-gray-500">Orion Team - In Progress</div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+                    <div className="bg-green-600 h-2 rounded-full" style={{width: '75%'}}></div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-start p-2 hover:bg-gray-50 rounded">
+                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-purple-600">📦</span>
+                </div>
+                <div className="flex-1">
+                  <div className="font-medium">Solution Integration</div>
+                  <div className="text-sm text-gray-500">Hydra Team - Starting</div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+                    <div className="bg-purple-600 h-2 rounded-full" style={{width: '25%'}}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Virtual Assistant Teaser */}
+          <div className="bg-gray-700 text-white p-4 rounded-lg">
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="font-medium mb-1">Product Operating Model Assistant</h3>
+                <p className="text-sm text-gray-300">Ask questions about processes, metrics, roles, or development cycles</p>
+              </div>
+              <div className="bg-blue-500 text-white py-2 px-4 rounded">
+                <div className="flex items-center">
+                  <span className="mr-2">💬</span>
+                  <span>Ask Assistant</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Mini Chat Interface */}
+            <div className="mt-4 bg-gray-800 rounded-lg p-3">
+              <div className="flex items-center">
+                <input 
+                  type="text" 
+                  placeholder="Type your question here..." 
+                  className="bg-gray-700 text-white rounded-lg py-2 px-3 w-full" 
+                />
+                <span className="text-blue-400 ml-2">➤</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Teams and Roles Content
+    const TeamsAndRolesContent = () => {
+      return (
+        <div>
+          <h2 className="text-xl font-medium mb-6">Teams & Roles</h2>
+          
+          {/* Tabs for subsections */}
+          <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
+            <div className="mr-6 pb-2 border-b-2 border-blue-500 font-medium whitespace-nowrap">Org Chart & SDUs</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Roles & Descriptions</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Onboarding Documents</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Building Teams</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Training</div>
+          </div>
+          
+          {/* Org Chart */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <h3 className="font-medium mb-4">Organization Structure</h3>
+            <div className="border border-gray-200 rounded-lg bg-gray-50 p-4 flex flex-col items-center">
+              {/* CTO Office */}
+              <div className="bg-blue-100 border border-blue-300 rounded-lg p-3 mb-4 w-64 text-center">
+                <h4 className="font-medium">CTO Office</h4>
+                <p className="text-sm text-gray-600">Executive Leadership</p>
+              </div>
+              
+              {/* Connector Line */}
+              <div className="h-8 border-l-2 border-gray-400"></div>
+              
+              {/* Development Group */}
+              <div className="bg-green-100 border border-green-300 rounded-lg p-3 mb-4 w-64 text-center">
+                <h4 className="font-medium">Development Group</h4>
+                <p className="text-sm text-gray-600">Central Technology Function</p>
+              </div>
+              
+              {/* Connector Lines */}
+              <div className="relative w-full max-w-3xl mb-4">
+                <div className="absolute left-1/2 transform -translate-x-1/2 border-l-2 border-gray-400 h-8"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full border-t-2 border-gray-400"></div>
+                <div className="absolute left-0 border-l-2 border-gray-400 h-8 bottom-0"></div>
+                <div className="absolute left-1/4 border-l-2 border-gray-400 h-8 bottom-0"></div>
+                <div className="absolute left-1/2 border-l-2 border-gray-400 h-8 bottom-0"></div>
+                <div className="absolute left-3/4 border-l-2 border-gray-400 h-8 bottom-0"></div>
+                <div className="absolute right-0 border-l-2 border-gray-400 h-8 bottom-0"></div>
+              </div>
+              
+              {/* SDUs Row */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 w-full max-w-4xl">
+                <div className="bg-purple-100 border border-purple-300 rounded-lg p-3 text-center">
+                  <h4 className="font-medium">Cassiopeia</h4>
+                  <p className="text-xs text-gray-600">SDU</p>
+                </div>
+                <div className="bg-purple-100 border border-purple-300 rounded-lg p-3 text-center">
+                  <h4 className="font-medium">Orion</h4>
+                  <p className="text-xs text-gray-600">SDU</p>
+                </div>
+                <div className="bg-purple-100 border border-purple-300 rounded-lg p-3 text-center">
+                  <h4 className="font-medium">Hydra</h4>
+                  <p className="text-xs text-gray-600">SDU</p>
+                </div>
+                <div className="bg-purple-100 border border-purple-300 rounded-lg p-3 text-center">
+                  <h4 className="font-medium">Centaurus</h4>
+                  <p className="text-xs text-gray-600">SDU</p>
+                </div>
+                <div className="bg-purple-100 border border-purple-300 rounded-lg p-3 text-center">
+                  <h4 className="font-medium">Phoenix</h4>
+                  <p className="text-xs text-gray-600">SDU</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Team List - SDUs */}
+          <div className="bg-white rounded-lg border border-gray-200 mb-6 overflow-x-auto">
+            <div className="min-w-full">
+              <div className="grid grid-cols-12 text-sm font-medium text-gray-500 p-3 border-b border-gray-200">
+                <div className="col-span-2">SDU Name</div>
+                <div className="col-span-2">Product Manager</div>
+                <div className="col-span-2">Technical Lead</div>
+                <div className="col-span-1">Devs</div>
+                <div className="col-span-3">Project</div>
+                <div className="col-span-1">Operating Phase</div>
+                <div className="col-span-1">Actions</div>
+              </div>
+              
+              {/* Team Rows - Expanded with more examples */}
+              <div className="divide-y divide-gray-100">
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Cassiopeia</div>
+                  <div className="col-span-2">Sarah Johnson</div>
+                  <div className="col-span-2">David Chen</div>
+                  <div className="col-span-1">3</div>
+                  <div className="col-span-3">Add Feature: Interactive Dashboard</div>
+                  <div className="col-span-1">
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Mission</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Orion</div>
+                  <div className="col-span-2">Michael Chen</div>
+                  <div className="col-span-2">Jessica Wong</div>
+                  <div className="col-span-1">4</div>
+                  <div className="col-span-3">Fix Pipeline: CI/CD Integration</div>
+                  <div className="col-span-1">
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Rapid</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Hydra</div>
+                  <div className="col-span-2">Alex Rodriguez</div>
+                  <div className="col-span-2">Samantha Lee</div>
+                  <div className="col-span-1">3</div>
+                  <div className="col-span-3">Configure new GIS Database</div>
+                  <div className="col-span-1">
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Integration</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Centaurus</div>
+                  <div className="col-span-2">Emily Turner</div>
+                  <div className="col-span-2">Ryan Jackson</div>
+                  <div className="col-span-1">2</div>
+                  <div className="col-span-3">Add Columns To SQL .dbo</div>
+                  <div className="col-span-1">
+                    <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">Value</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Phoenix</div>
+                  <div className="col-span-2">Thomas Lee</div>
+                  <div className="col-span-2">Andrea Martinez</div>
+                  <div className="col-span-1">4</div>
+                  <div className="col-span-3">New ML Model Integration</div>
+                  <div className="col-span-1">
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Mission</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Pegasus</div>
+                  <div className="col-span-2">James Wilson</div>
+                  <div className="col-span-2">Maria Garcia</div>
+                  <div className="col-span-1">3</div>
+                  <div className="col-span-3">API Gateway Modernization</div>
+                  <div className="col-span-1">
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Rapid</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Andromeda</div>
+                  <div className="col-span-2">Daniel Parker</div>
+                  <div className="col-span-2">Olivia Washington</div>
+                  <div className="col-span-1">5</div>
+                  <div className="col-span-3">Kubernetes Cluster Management</div>
+                  <div className="col-span-1">
+                    <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">Value</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-12 p-3 hover:bg-gray-50">
+                  <div className="col-span-2 font-medium">Draco</div>
+                  <div className="col-span-2">Rachel Kim</div>
+                  <div className="col-span-2">Jason Bennett</div>
+                  <div className="col-span-1">2</div>
+                  <div className="col-span-3">Security Compliance Framework</div>
+                  <div className="col-span-1">
+                    <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Integration</span>
+                  </div>
+                  <div className="col-span-1">
+                    <span className="text-gray-400">⋯</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Virtual Assistant Link */}
+          <div className="bg-gray-700 text-white p-4 rounded-lg flex flex-col md:flex-row md:items-center md:justify-between">
+            <div className="mb-4 md:mb-0">
+              <h3 className="font-medium mb-1">Need help with teams or roles?</h3>
+              <p className="text-sm text-gray-300">Ask the Virtual Assistant about team structures, roles, or responsibilities</p>
+            </div>
+            <div className="bg-blue-500 text-white py-2 px-4 rounded">
+              <div className="flex items-center">
+                <span className="mr-2">💬</span>
+                <span>Ask Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Software Way Content
+    const SoftwareWayContent = () => {
+      return (
+        <div>
+          <h2 className="text-xl font-medium mb-6">The Software Way</h2>
+          
+          {/* Tabs for subsections */}
+          <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
+            <div className="mr-6 pb-2 border-b-2 border-blue-500 font-medium whitespace-nowrap">13-Step Flowchart</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">What Right Looks Like</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Training Resources</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Lessons Learned</div>
+          </div>
+          
+          {/* 13-Step Development Cycle - Complete with all steps */}
+          <div className="bg-white rounded-lg border border-gray-200 mb-6 p-4">
+            <h3 className="font-medium mb-4">13-Step Development Cycle</h3>
+            
+            <div className="mb-6">
+              <h4 className="text-sm font-medium text-blue-600 mb-2">Before Writing Code</h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-blue-50 rounded-lg p-3 border border-blue-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-2">1</div>
+                    <span className="font-medium">Identify Product Manager</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Empower key decision-maker for the product</p>
+                </div>
+                <div className="bg-blue-50 rounded-lg p-3 border border-blue-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-2">2</div>
+                    <span className="font-medium">Understand User Needs</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Gather and analyze requirements</p>
+                </div>
+                <div className="bg-blue-50 rounded-lg p-3 border border-blue-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-2">3</div>
+                    <span className="font-medium">Prioritize Value Delivery</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Focus on rapidly delivering user value</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <h4 className="text-sm font-medium text-green-600 mb-2">When Beginning & Throughout Development</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="bg-green-50 rounded-lg p-3 border border-green-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">4</div>
+                    <span className="font-medium">Use Version Control</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Manage code changes consistently</p>
+                </div>
+                <div className="bg-green-50 rounded-lg p-3 border border-green-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">5</div>
+                    <span className="font-medium">Track Work</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Document progress consistently</p>
+                </div>
+                <div className="bg-green-50 rounded-lg p-3 border border-green-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">6</div>
+                    <span className="font-medium">Automate Testing</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Implement continuous testing</p>
+                </div>
+                <div className="bg-green-50 rounded-lg p-3 border border-green-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">7</div>
+                    <span className="font-medium">Document APIs</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Share API documentation</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <h4 className="text-sm font-medium text-purple-600 mb-2">By First Deliverable</h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-purple-50 rounded-lg p-3 border border-purple-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">8</div>
+                    <span className="font-medium">Support Mechanisms</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Establish user feedback channels</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3 border border-purple-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">9</div>
+                    <span className="font-medium">Automate Deployments</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Implement CI/CD pipeline</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3 border border-purple-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">10</div>
+                    <span className="font-medium">Automate Monitoring</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Implement system monitoring</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-sm font-medium text-orange-600 mb-2">As You Iterate</h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-orange-50 rounded-lg p-3 border border-orange-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-2">11</div>
+                    <span className="font-medium">Automate Alerting</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Set up incident response</p>
+                </div>
+                <div className="bg-orange-50 rounded-lg p-3 border border-orange-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-2">12</div>
+                    <span className="font-medium">Data-Driven Decisions</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Use metrics to guide development</p>
+                </div>
+                <div className="bg-orange-50 rounded-lg p-3 border border-orange-200 cursor-pointer hover:shadow-md">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-2">13</div>
+                    <span className="font-medium">Continuous Improvement</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Iterate based on feedback</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Example Cards */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <h3 className="font-medium mb-4">Examples & Resources</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-3">
+                  <span className="text-blue-600 mr-2">📖</span>
+                  <h4 className="font-medium">DevOps Best Practices</h4>
+                </div>
+                <p className="text-sm text-gray-600 mb-3">Comprehensive guide to CI/CD implementation</p>
+                <div className="text-xs text-blue-600">View Guide</div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-3">
+                  <span className="text-green-600 mr-2">🏆</span>
+                  <h4 className="font-medium">Success Stories</h4>
+                </div>
+                <p className="text-sm text-gray-600 mb-3">Case studies of successful implementations</p>
+                <div className="text-xs text-blue-600">View Stories</div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-3">
+                  <span className="text-purple-600 mr-2">📝</span>
+                  <h4 className="font-medium">Code Templates</h4>
+                </div>
+                <p className="text-sm text-gray-600 mb-3">Reusable patterns and scaffolding</p>
+                <div className="text-xs text-blue-600">View Templates</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Virtual Assistant Link */}
+          <div className="bg-gray-700 text-white p-4 rounded-lg flex items-center justify-between">
+            <div>
+              <h3 className="font-medium mb-1">Questions about the Software Way?</h3>
+              <p className="text-sm text-gray-300">Ask the Virtual Assistant about development practices and methodologies</p>
+            </div>
+            <div className="bg-blue-500 text-white py-2 px-4 rounded">
+              <div className="flex items-center">
+                <span className="mr-2">💬</span>
+                <span>Ask Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Technology Content
+    const TechnologyContent = () => {
+      return (
+        <div>
+          <h2 className="text-xl font-medium mb-6">Technology</h2>
+          
+          {/* Top 4 Metrics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">App Availability</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-1">99.8%</div>
+                  <div className="text-sm text-gray-500">Uptime</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">Lead Time</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-600 mb-1">3.2</div>
+                  <div className="text-sm text-gray-500">Days</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">Deployment Frequency</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600 mb-1">5.4</div>
+                  <div className="text-sm text-gray-500">Weekly</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+              <h3 className="font-medium mb-3">Active SDUs</h3>
+              <div className="h-24 flex items-center justify-center bg-gray-50 rounded">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-500 mb-1">8</div>
+                  <div className="text-sm text-gray-500">Units</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Tabs for subsections */}
+          <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
+            <div className="mr-6 pb-2 border-b-2 border-blue-500 font-medium whitespace-nowrap">Service Models</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Environments</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Tools & Apps</div>
+            <div className="mr-6 pb-2 text-gray-500 whitespace-nowrap">Best Practices</div>
+          </div>
+          
+          {/* Service Model Selection - With Learn More Buttons */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <h3 className="font-medium mb-4">Service Model Selection</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="border border-blue-200 bg-blue-50 rounded-lg p-4">
+                <h4 className="font-medium mb-2 text-center">Full-Service Model</h4>
+                <ul className="space-y-2 text-sm mb-4">
+                  <li className="flex items-center">
+                    <span className="text-blue-600 mr-2">✓</span>
+                    Complete DevOps team support
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-blue-600 mr-2">✓</span>
+                    End-to-end development lifecycle
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-blue-600 mr-2">✓</span>
+                    Ideal for teams without technical expertise
+                  </li>
+                </ul>
+                <div className="flex justify-center">
+                  <div className="bg-blue-600 text-white py-2 px-4 rounded text-sm cursor-pointer hover:bg-blue-700">
+                    Learn More
+                  </div>
+                </div>
+              </div>
+              <div className="border border-purple-200 bg-purple-50 rounded-lg p-4">
+                <h4 className="font-medium mb-2 text-center">Self-Service Model</h4>
+                <ul className="space-y-2 text-sm mb-4">
+                  <li className="flex items-center">
+                    <span className="text-purple-600 mr-2">✓</span>
+                    Access to best practices and resources
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-purple-600 mr-2">✓</span>
+                    Technical support when needed
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-purple-600 mr-2">✓</span>
+                    For teams with existing technical capabilities
+                  </li>
+                </ul>
+                <div className="flex justify-center">
+                  <div className="bg-purple-600 text-white py-2 px-4 rounded text-sm cursor-pointer hover:bg-purple-700">
+                    Learn More
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Environments */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-medium">Available Environments</h3>
+              <div className="text-sm text-blue-600">View Status Dashboard</div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-medium">DEV1</h4>
+                  <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Development Environment</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full inline-block">
+                    Available
+                  </div>
+                  <div className="text-xs text-blue-600">99.7% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-medium">DEV2</h4>
+                  <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Development Environment</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full inline-block">
+                    Available
+                  </div>
+                  <div className="text-xs text-blue-600">99.9% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-medium">SEC</h4>
+                  <div className="h-2 w-2 bg-yellow-500 rounded-full"></div>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Security & Compliance</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full inline-block">
+                    Maintenance
+                  </div>
+                  <div className="text-xs text-blue-600">97.5% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-medium">TS</h4>
+                  <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Test & Staging</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full inline-block">
+                    Available
+                  </div>
+                  <div className="text-xs text-blue-600">99.8% Uptime</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex justify-between items-center mb-4 mt-6">
+              <h3 className="font-medium">Available Tools & Applications</h3>
+              <div className="text-sm text-blue-600">Request Access</div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-blue-600 mr-2">🗄️</span>
+                  <h4 className="font-medium">Nova-X</h4>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Advanced AI model repository</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-blue-600">Access Tool</div>
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">99.9% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-green-600 mr-2">🧭</span>
+                  <h4 className="font-medium">Quantum Cartographer</h4>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Spatial data management system</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-blue-600">Access Tool</div>
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">99.5% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-purple-600 mr-2">🔀</span>
+                  <h4 className="font-medium">Nebula Stream</h4>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Feature flag and deployment pipeline</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-blue-600">Access Tool</div>
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">99.7% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-red-600 mr-2">🗄️</span>
+                  <h4 className="font-medium">Galactic Core</h4>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Distributed data warehouse</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-blue-600">Access Tool</div>
+                  <div className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">98.2% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-blue-600 mr-2">🧭</span>
+                  <h4 className="font-medium">Stellar Lens</h4>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Spatial data visualization suite</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-blue-600">Access Tool</div>
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">99.9% Uptime</div>
+                </div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-orange-600 mr-2">🧭</span>
+                  <h4 className="font-medium">Warp Navigator</h4>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">Geospatial intelligence platform</p>
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-blue-600">Access Tool</div>
+                  <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">99.6% Uptime</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Virtual Assistant Link */}
+          <div className="bg-gray-700 text-white p-4 rounded-lg flex items-center justify-between">
+            <div>
+              <h3 className="font-medium mb-1">Need technical support?</h3>
+              <p className="text-sm text-gray-300">Ask the Virtual Assistant about environments, tools, or applications</p>
+            </div>
+            <div className="bg-blue-500 text-white py-2 px-4 rounded">
+              <div className="flex items-center">
+                <span className="mr-2">💬</span>
+                <span>Ask Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Acquisitions Content
+    const AcquisitionsContent = () => {
+      return (
+        <div>
+          <h2 className="text-xl font-medium mb-6">Acquisitions & ATOs</h2>
+          
+          {/* Tabs for subsections */}
+          <div className="flex border-b border-gray-200 mb-6">
+            <div className="mr-6 pb-2 border-b-2 border-blue-500 font-medium">Getting Started</div>
+            <div className="mr-6 pb-2 text-gray-500">Templates & Resources</div>
+            <div className="mr-6 pb-2 text-gray-500">Active Acquisitions</div>
+            <div className="mr-6 pb-2 text-gray-500">ATO Process</div>
+          </div>
+          
+          {/* Getting Started */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <h3 className="font-medium mb-4">Acquisition Process Overview</h3>
+            <div className="flex items-center mb-6">
+              <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-full bg-blue-600 rounded-full" style={{width: '100%'}}></div>
+              </div>
+              <div className="w-8 text-center text-xs text-gray-500">1</div>
+              <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-full bg-blue-600 rounded-full" style={{width: '100%'}}></div>
+              </div>
+              <div className="w-8 text-center text-xs text-gray-500">2</div>
+              <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-full bg-blue-600 rounded-full" style={{width: '75%'}}></div>
+              </div>
+              <div className="w-8 text-center text-xs text-gray-500">3</div>
+              <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-full bg-blue-600 rounded-full" style={{width: '0%'}}></div>
+              </div>
+              <div className="w-8 text-center text-xs text-gray-500">4</div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div className="border border-blue-200 bg-blue-50 rounded-lg p-3 cursor-pointer hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">1</div>
+                  <h4 className="font-medium">Initial Request</h4>
+                </div>
+                <p className="text-xs text-gray-600">Submit acquisition request with business justification</p>
+              </div>
+              <div className="border border-blue-200 bg-blue-50 rounded-lg p-3 cursor-pointer hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">2</div>
+                  <h4 className="font-medium">Market Research</h4>
+                </div>
+                <p className="text-xs text-gray-600">Research available solutions and vendors</p>
+              </div>
+              <div className="border border-blue-200 bg-blue-50 rounded-lg p-3 cursor-pointer hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center mr-2">3</div>
+                  <h4 className="font-medium">Procurement</h4>
+                </div>
+                <p className="text-xs text-gray-600">Contracting and purchasing process</p>
+              </div>
+              <div className="border border-gray-200 bg-gray-50 rounded-lg p-3 cursor-pointer hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <div className="w-6 h-6 bg-gray-400 text-white rounded-full flex items-center justify-center mr-2">4</div>
+                  <h4 className="font-medium">Implementation</h4>
+                </div>
+                <p className="text-xs text-gray-600">Deploy and integrate the solution</p>
+              </div>
+            </div>
+            
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-medium">ATO Process Overview</h3>
+              <div className="text-sm text-blue-600">View Full Guide</div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="border border-blue-200 bg-blue-50 rounded-lg p-3 cursor-pointer hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-blue-600 mr-2">🛡️</span>
+                  <h4 className="font-medium">Security Documentation</h4>
+                </div>
+                <p className="text-xs text-gray-600">Prepare security documentation package</p>
+              </div>
+              <div className="border border-blue-200 bg-blue-50 rounded-lg p-3 cursor-pointer hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-blue-600 mr-2">🛡️</span>
+                  <h4 className="font-medium">Assessment</h4>
+                </div>
+                <p className="text-xs text-gray-600">Security controls assessment</p>
+              </div>
+              <div className="border border-blue-200 bg-blue-50 rounded-lg p-3 cursor-pointer hover:shadow-md">
+                <div className="flex items-center mb-2">
+                  <span className="text-blue-600 mr-2">🛡️</span>
+                  <h4 className="font-medium">Authorization</h4>
+                </div>
+                <p className="text-xs text-gray-600">Final approval and authorization</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Quick Start Guides */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <h3 className="font-medium mb-4">Quick Start Guides</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-3">
+                  <span className="text-blue-600 mr-2">📄</span>
+                  <h4 className="font-medium">Acquisition Request</h4>
+                </div>
+                <p className="text-sm text-gray-600 mb-2">How to submit new requests</p>
+                <div className="text-xs text-blue-600">View Guide</div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-3">
+                  <span className="text-green-600 mr-2">📄</span>
+                  <h4 className="font-medium">Market Research</h4>
+                </div>
+                <p className="text-sm text-gray-600 mb-2">Best practices for research</p>
+                <div className="text-xs text-blue-600">View Guide</div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-3">
+                  <span className="text-purple-600 mr-2">📄</span>
+                  <h4 className="font-medium">ATO Checklist</h4>
+                </div>
+                <p className="text-sm text-gray-600 mb-2">Step-by-step checklist</p>
+                <div className="text-xs text-blue-600">View Guide</div>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-3 hover:shadow-md">
+                <div className="flex items-center mb-3">
+                  <span className="text-orange-600 mr-2">📄</span>
+                  <h4 className="font-medium">Timeline Estimator</h4>
+                </div>
+                <p className="text-sm text-gray-600 mb-2">Estimate process duration</p>
+                <div className="text-xs text-blue-600">View Guide</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Virtual Assistant Link */}
+          <div className="bg-gray-700 text-white p-4 rounded-lg flex items-center justify-between">
+            <div>
+              <h3 className="font-medium mb-1">Questions about acquisitions or ATOs?</h3>
+              <p className="text-sm text-gray-300">Ask the Virtual Assistant for guidance on processes and requirements</p>
+            </div>
+            <div className="bg-blue-500 text-white py-2 px-4 rounded">
+              <div className="flex items-center">
+                <span className="mr-2">💬</span>
+                <span>Ask Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Virtual Assistant Content
+    const VirtualAssistantContent = () => {
+      return (
+        <div>
+          <h2 className="text-xl font-medium mb-6">Virtual Assistant</h2>
+          
+          {/* Virtual Assistant Chat Interface */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <div className="flex flex-col md:flex-row h-96">
+              {/* Sidebar for Topics */}
+              <div className="w-full md:w-1/4 pr-0 md:pr-4 border-b md:border-b-0 md:border-r border-gray-200 mb-4 md:mb-0">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-medium">Recent Questions</h3>
+                  <div className="bg-blue-600 text-white p-1 rounded-full">
+                    <span className="text-xs">➕</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-100 rounded-lg p-2 mb-3">
+                  <div className="text-sm font-medium">Who is my product manager?</div>
+                  <div className="text-xs text-gray-500">5 minutes ago</div>
+                </div>
+                
+                <div className="p-2 mb-3 hover:bg-gray-50 rounded-lg">
+                  <div className="text-sm font-medium">Development cycle questions</div>
+                  <div className="text-xs text-gray-500">Yesterday</div>
+                </div>
+                
+                <div className="p-2 mb-3 hover:bg-gray-50 rounded-lg">
+                  <div className="text-sm font-medium">Operating model phases</div>
+                  <div className="text-xs text-gray-500">2 days ago</div>
+                </div>
+                
+                <div className="border-t border-gray-200 mt-4 pt-4 hidden md:block">
+                  <h4 className="text-sm font-medium mb-2">Common Questions</h4>
+                  <div className="space-y-2">
+                    <div className="text-sm text-blue-600 hover:underline cursor-pointer">What is the product vision?</div>
+                    <div className="text-sm text-blue-600 hover:underline cursor-pointer">What are our product metrics?</div>
+                    <div className="text-sm text-blue-600 hover:underline cursor-pointer">Where is our code repository?</div>
+                    <div className="text-sm text-blue-600 hover:underline cursor-pointer">What is our deployment frequency?</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Main Chat Area */}
+              <div className="w-full md:w-3/4 md:pl-4 flex flex-col">
+                <div className="flex-1 overflow-y-auto">
+                  <div className="space-y-4">
+                    {/* Assistant Messages */}
+                    <div className="flex items-start mb-4">
+                      <div className="w-10 h-10 bg-blue-600 rounded-full mr-4 flex items-center justify-center text-white">AI</div>
+                      <div className="bg-gray-100 rounded-lg p-3 max-w-3/4">
+                        <p className="text-sm">Hello! I'm your Product Operating Model Assistant. I can help with questions about your team's development process, metrics, roles, or anything related to the operating model.</p>
+                      </div>
+                    </div>
+                    
+                    {/* User Message */}
+                    <div className="flex items-start justify-end mb-4">
+                      <div className="bg-blue-50 rounded-lg p-3 max-w-3/4">
+                        <p className="text-sm">Who is the accountable product manager for my team?</p>
+                      </div>
+                      <div className="w-10 h-10 bg-gray-200 rounded-full ml-4 flex items-center justify-center text-gray-500">You</div>
+                    </div>
+                    
+                    {/* Assistant Response with References */}
+                    <div className="flex items-start mb-4">
+                      <div className="w-10 h-10 bg-blue-600 rounded-full mr-4 flex items-center justify-center text-white">AI</div>
+                      <div className="space-y-3 max-w-3/4">
+                        <div className="bg-gray-100 rounded-lg p-3">
+                          <p className="text-sm">Based on the system records, Sarah Johnson is the accountable product manager for the Cassiopeia SDU. As the product manager, she has decision-making authority on which features get delivery priority and works directly with the development team.</p>
+                          <p className="text-sm mt-2">Would you like to know more about her responsibilities or how she interacts with your team?</p>
+                        </div>
+                        
+                        <div className="bg-blue-50 rounded-lg p-3">
+                          <div className="flex items-center text-sm font-medium text-blue-600 mb-1">
+                            <span className="mr-1">📄</span>
+                            Referenced Resources:
+                          </div>
+                          <div className="text-sm text-blue-600 hover:underline">SDU Structure Documentation</div>
+                          <div className="text-sm text-blue-600 hover:underline">Product Manager Role Description</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* User Message */}
+                    <div className="flex items-start justify-end mb-4">
+                      <div className="bg-blue-50 rounded-lg p-3 max-w-3/4">
+                        <p className="text-sm">Yes, what's her relationship with the program manager and what authority does she have?</p>
+                      </div>
+                      <div className="w-10 h-10 bg-gray-200 rounded-full ml-4 flex items-center justify-center text-gray-500">You</div>
+                    </div>
+                    
+                    {/* Assistant Response */}
+                    <div className="flex items-start mb-4">
+                      <div className="w-10 h-10 bg-blue-600 rounded-full mr-4 flex items-center justify-center text-white">AI</div>
+                      <div className="bg-gray-100 rounded-lg p-3 max-w-3/4">
+                        <p className="text-sm">Sarah Johnson (Product Manager) works collaboratively with Alex Peters (Program Manager) but they have distinct responsibilities:</p>
+                        <ul className="text-sm mt-2 space-y-1 pl-4">
+                          <li>• Sarah focuses on product vision, feature prioritization, and user needs</li>
+                          <li>• Alex handles timelines, resources, and broader program coordination</li>
+                        </ul>
+                        <p className="text-sm mt-2">Under our Product Operating Model, Sarah has decision-making authority on:</p>
+                        <ul className="text-sm mt-1 space-y-1 pl-4">
+                          <li>• Feature prioritization and roadmap</li>
+                          <li>• User story acceptance</li>
+                          <li>• MVP definition and scope</li>
+                        </ul>
+                        <p className="text-sm mt-2">All stakeholders, including the Program Manager, have formally agreed to this authority to ensure clear decision-making.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Input Area */}
+                <div className="border-t border-gray-200 pt-4 mt-auto">
+                  <div className="flex items-center">
+                    <div className="flex-1 bg-gray-100 rounded-lg p-3 flex items-center">
+                      <input 
+                        type="text" 
+                        placeholder="Ask about roles, processes, metrics, or development cycle..." 
+                        className="bg-transparent w-full outline-none" 
+                      />
+                      <div className="flex items-center space-x-2">
+                        <div className="text-gray-400 cursor-pointer">
+                          <span>➕</span>
+                        </div>
+                        <div className="bg-blue-600 p-1 rounded-full text-white cursor-pointer">
+                          <span>➤</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center mt-2 text-xs text-gray-500">
+                    <div>Powered by Product Operating Model knowledge base</div>
+                    <div className="flex items-center">
+                      <span className="mr-1">🗄️</span>
+                      <span>Connected to organizational documentation</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Common Questions */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <h3 className="font-medium mb-4">Common Assistant Questions</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h4 className="font-medium mb-3">Product Management</h4>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                    Who is the accountable product manager?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                    How does the product manager interact with the program manager?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                    What is the product vision?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                    Who are the users or user personas?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                    What are the product-specific metrics?
+                  </li>
+                </ul>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h4 className="font-medium mb-3">Development Process</h4>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    What is the code review process?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    Where is the code repository?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    What is the team's branching strategy?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    Where can we track work and progress?
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    What is the team's deployment frequency?
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Security Content
+    const SecurityContent = () => {
+      return (
+        <div>
+          <h2 className="text-xl font-medium mb-6">Security</h2>
+          
+          {/* Environment Security Status */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+            <h3 className="font-medium mb-4">Environment Security Status</h3>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Environment</th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Security Level</th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Availability</th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Security</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">OnPrem-3-PRE</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">UNC</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">VA LOC</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Online</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="text-green-500">✓</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">AWS-GOV2-PROD</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">CON</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AWS-region1</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Online</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="text-green-500">✓</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">AWS-DEVCore-DEV</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">SEC</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AWS-region2</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Online</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="text-green-500">✓</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">GovCloud-TS-PROD</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">TS</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">GovCloud-US</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Online</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="text-green-500">✓</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">OnPrem-SC2-TEST</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">SEC</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">DC LOC</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Offline</span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <span className="text-gray-300">✓</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          {/* Security Resources */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {/* Best Practices */}
+            <div className="bg-white rounded-lg border border-gray-200 p-4">
+              <h3 className="font-medium mb-4">Security Best Practices</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-2 mt-0.5">🛡️</span>
+                  <div>
+                    <div className="font-medium text-sm">Data Encryption Standards</div>
+                    <p className="text-xs text-gray-600">Guidelines for data encryption in transit and at rest</p>
+                    <div className="text-xs text-blue-600 mt-1">View Document</div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-2 mt-0.5">🛡️</span>
+                  <div>
+                    <div className="font-medium text-sm">Access Control Policies</div>
+                    <p className="text-xs text-gray-600">Role-based access control implementation guide</p>
+                    <div className="text-xs text-blue-600 mt-1">View Document</div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-2 mt-0.5">🛡️</span>
+                  <div>
+                    <div className="font-medium text-sm">Security Auditing Procedures</div>
+                    <p className="text-xs text-gray-600">Process for conducting security audits and assessments</p>
+                    <div className="text-xs text-blue-600 mt-1">View Document</div>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-2 mt-0.5">🛡️</span>
+                  <div>
+                    <div className="font-medium text-sm">Incident Response Plan</div>
+                    <p className="text-xs text-gray-600">Steps to follow during a security incident</p>
+                    <div className="text-xs text-blue-600 mt-1">View Document</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Report Security Concern */}
+            <div className="bg-white rounded-lg border border-gray-200 p-4">
+              <h3 className="font-medium mb-4">Report a Security Concern</h3>
+              <div className="bg-red-50 rounded-lg border border-red-200 p-4 mb-4">
+                <div className="flex items-start">
+                  <div className="bg-red-100 rounded-full p-2 mr-3 flex items-center justify-center">
+                    <span className="text-red-600">🛡️</span>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-red-800 mb-1">Noticed a Security Issue?</h4>
+                    <p className="text-sm text-red-700 mb-3">Report security concerns immediately to ensure prompt resolution. Your vigilance helps maintain our security posture.</p>
+                    <div className="flex">
+                      <button className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        Report Security Concern
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-sm text-gray-700 mt-4">
+                <h4 className="font-medium mb-2">When to Report:</h4>
+                <ul className="list-disc pl-5 space-y-1 text-sm">
+                  <li>Suspected unauthorized access</li>
+                  <li>Unusual system behavior</li>
+                  <li>Potential data exposure</li>
+                  <li>Policy violations</li>
+                  <li>Suspicious emails or communications</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          {/* Virtual Assistant Link */}
+          <div className="bg-gray-700 text-white p-4 rounded-lg flex items-center justify-between">
+            <div>
+              <h3 className="font-medium mb-1">Questions about security protocols?</h3>
+              <p className="text-sm text-gray-300">Ask the Virtual Assistant about security requirements, policies, or procedures</p>
+            </div>
+            <div className="bg-blue-500 text-white py-2 px-4 rounded">
+              <div className="flex items-center">
+                <span className="mr-2">💬</span>
+                <span>Ask Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    // Navigation sidebar items
+    const navItems = [
+      { id: 'hero', label: 'Dashboard', icon: '🏠' },
+      { id: 'teams', label: 'Teams & Roles', icon: '👥' },
+      { id: 'software', label: 'The Software Way', icon: '💻' },
+      { id: 'technology', label: 'Technology', icon: '🔧' },
+      { id: 'acquisitions', label: 'Acquisitions & ATOs', icon: '💰' },
+      { id: 'security', label: 'Security', icon: '🛡️' },
+      { id: 'assistant', label: 'Virtual Assistant', icon: '💬' }
+    ];
+
+    // Main Milano Labs Wireframe Component
+    const MilanoLabsWireframe = () => {
+      const [activeTab, setActiveTab] = React.useState('hero');
+
+      const renderTabContent = () => {
+        switch(activeTab) {
+          case 'teams':
+            return <TeamsAndRolesContent />;
+          case 'software':
+            return <SoftwareWayContent />;
+          case 'technology':
+            return <TechnologyContent />;
+          case 'acquisitions':
+            return <AcquisitionsContent />;
+          case 'security':
+            return <SecurityContent />;
+          case 'assistant':
+            return <VirtualAssistantContent />;
+          case 'hero':
+          default:
+            return <HeroContent />;
+        }
+      };
+
+      return (
+        <div className="flex flex-col h-full">
+          <header className="bg-white border-b border-gray-200 p-4">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center">
+                <div className="w-10 h-10 bg-blue-600 rounded mr-3"></div>
+                <h1 className="text-xl font-semibold">Milano Labs V2.1</h1>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="relative">
+                  <div className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</div>
+                  <input type="text" placeholder="Search..." className="bg-gray-100 rounded-full h-10 pl-10 pr-4 w-64" />
+                </div>
+                <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+              </div>
+            </div>
+          </header>
+          
+          <div className="flex flex-1 bg-gray-50">
+            {/* Navigation Sidebar */}
+            <nav className="w-60 bg-white p-4 border-r border-gray-200">
+              <div className="space-y-1">
+                {navItems.map(item => (
+                  <div 
+                    key={item.id}
+                    className={`flex items-center p-2 ${activeTab === item.id ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50'} rounded cursor-pointer`}
+                    onClick={() => setActiveTab(item.id)}
+                  >
+                    <span className="mr-3">{item.icon}</span>
+                    <span className={activeTab === item.id ? 'font-medium' : ''}>{item.label}</span>
+                  </div>
+                ))}
+                <div className="flex items-center p-2 text-gray-700 hover:bg-gray-50 rounded cursor-pointer">
+                  <span className="mr-3">⚙️</span>
+                  <span>Settings</span>
+                </div>
+              </div>
+            </nav>
+            
+            {/* Main Content Area */}
+            <main className="flex-1 p-6 overflow-auto">
+              {renderTabContent()}
+            </main>
+          </div>
+        </div>
+      );
+    };
+
+    // Error boundary to help debug issues
+    class ErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { hasError: false, error: null, errorInfo: null };
+      }
+
+      static getDerivedStateFromError(error) {
+        return { hasError: true };
+      }
+
+      componentDidCatch(error, errorInfo) {
+        this.setState({
+          error: error,
+          errorInfo: errorInfo
+        });
+        console.error("Error caught in ErrorBoundary:", error, errorInfo);
+      }
+
+      render() {
+        if (this.state.hasError) {
+          return (
+            <div className="p-4 text-red-600 bg-red-100 rounded-lg">
+              <h2>Something went wrong.</h2>
+              <details style={{ whiteSpace: 'pre-wrap' }}>
+                <summary>Show error details</summary>
+                <p>{this.state.error && this.state.error.toString()}</p>
+                <p>Component Stack Error Details:</p>
+                <p>{this.state.errorInfo && this.state.errorInfo.componentStack}</p>
+              </details>
+            </div>
+          );
+        }
+
+        return this.props.children; 
+      }
+    }
+
+    // Render the App with error boundary
+    ReactDOM.render(
+      <ErrorBoundary>
+        <MilanoLabsWireframe />
+      </ErrorBoundary>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
